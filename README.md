@@ -1,4 +1,4 @@
-﻿# [H6](https://github.com/mcuyun/H6) 
+﻿# [全志H6](https://github.com/mcuyun/H6) 
 
 [![sites](SoC/SoC.png)](http://www.qitas.cn) 
 
@@ -6,19 +6,17 @@
 
 ## [描述](https://github.com/sochub/H6/wiki) 
 
-[![sites](docs/H6.png)](http://www.qitas.cn) 
+珠海全志cortex A53四核28nm工艺，针对盒子侧重高清显示4K画质，关键在于接口丰富
 
-cortex A53四核 28nm工艺，针对盒子侧重高清显示4K画质，关键在于接口丰富
+[![sites](docs/H6.png)](http://www.qitas.cn) 
 
 主要特点：PCIe 2.0 , USB 3.0 
 
-功能特点：HDMI && mali-T720MP2
+功能特点：HDMI , mali-T720MP2
 
-主要短板：图像和音频输入
+主要短板：图像ISP和音频相关
 
 器件封装：BGA451 (15mm x 15mm, 0.65mm/0.3mm pitch) 
-
-参考价格：48元
 
 #### [docs](docs/)
 
