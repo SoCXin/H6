@@ -99,9 +99,6 @@ MENUSTR="Welcome to H6 Build System. Pls choose Platform."
 ##########################################
 
 export PLATFORM="3"
-cd $ROOT/scripts
-./Version_Change.sh $PLATFORM
-cd -
 
 ##########################################
 ## Root Password check
