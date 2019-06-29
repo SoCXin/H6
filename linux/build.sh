@@ -95,7 +95,6 @@ if [ ! -d $ROOT/output ]; then
     mkdir -p $ROOT/output
 fi
 
-MENUSTR="Welcome to H6 Build System. Pls choose Platform."
 ##########################################
 
 export PLATFORM="3"
@@ -126,24 +125,20 @@ done
 
 echo $PASSWD | sudo ls &> /dev/null 2>&1
 
-## Check cross tools
-if [ ! -d $ROOT/toolchain/aarch-linux -o ! -d $ROOT/toolchain/arm-linux-eabi]; then #
-	cd $SCRIPTS
-	./install_toolchain.sh
-	cd -
-fi
 
-if [ ! -d $ROOT/output ]; then
-    mkdir -p $ROOT/output
-fi
-
-## prepare development tools
-if [ ! -f $ROOT/output/.tmp_toolchain ]; then
-	cd $SCRIPTS
-	sudo ./Prepare_toolchain.sh
-	touch $ROOT/output/.tmp_toolchain
-	cd -
-fi
+function get_toolchain()
+{ 
+	if [ ! -d $ROOT/toolchain/gcc-linaro-aarch ]; then
+		cd $ROOT
+		git clone --depth=1 https://github.com/sochub/aarch-linux.git
+		mv aarch-linux toolchain
+    	fi
+	if [ ! -d $ROOT/toolchain/gcc-linaro-aarch/gcc-linaro ]; then
+		cd $ROOT/toolchain/gcc-linaro-aarch
+		git clone --depth=1 https://github.com/sochub/arm-linux-eabi.git
+		mv arm-linux-eabi gcc-linaro
+    	fi
+}
 
 MENUSTR="Pls select build option"
 
@@ -156,6 +151,11 @@ OPTION=$(whiptail --title "H6 Build System" \
 	"4"   "Update Module" \
 	"5"   "Update Uboot" \
 	3>&1 1>&2 2>&3)
+
+
+
+get_toolchain
+prepare_toolchain
 
 if [ $OPTION = "0" -o $OPTION = "0" ]; then
 	sudo echo ""
