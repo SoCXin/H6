@@ -4,7 +4,7 @@ set -e
 # This script is used to build H6 Linux.
 # by: Qitas
 # Date: 2019-03-14
-##########################################
+##########################################`
 export ROOT=`pwd`
 SCRIPTS=$ROOT/scripts
 export BOOT_PATH
@@ -140,8 +140,6 @@ function get_toolchain()
     	fi
 }
 
-MENUSTR="Pls select build option"
-
 OPTION=$(whiptail --title "H6 Build System" \
 	--menu "$MENUSTR" 20 60 12 --cancel-button Finish --ok-button Select \
 	"0"   "Build Release Image" \
@@ -152,10 +150,7 @@ OPTION=$(whiptail --title "H6 Build System" \
 	"5"   "Update Uboot" \
 	3>&1 1>&2 2>&3)
 
-
-
 get_toolchain
-prepare_toolchain
 
 if [ $OPTION = "0" -o $OPTION = "0" ]; then
 	sudo echo ""
