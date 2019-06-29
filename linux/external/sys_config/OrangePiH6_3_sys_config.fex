@@ -495,7 +495,7 @@ motor_shake         = port:power3<1><default><default><1>
 [nand0_para]
 nand0_support_2ch    = 0
 
-nand0_used          = 1
+nand0_used          = 0
 nand0_we            = port:PC00<2><0><1><default>
 nand0_ale           = port:PC01<2><0><1><default>
 nand0_cle           = port:PC02<2><0><1><default>
