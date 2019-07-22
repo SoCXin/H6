@@ -34,6 +34,17 @@ static hal_fb_dev_t *get_fb_dev(unsigned int fb_id)
 	}
 }
 
+static void save_boot_disp_to_uenv(int disp_para)
+{
+	char val_buff[8] = {0};
+
+	sprintf(val_buff, "%x", disp_para);	
+
+	setenv("disp_para", val_buff);
+	
+	return;
+}
+
 int hal_switch_device(disp_device_t *device, unsigned int fb_id)
 {
 	int disp_para;
@@ -56,7 +67,8 @@ int hal_switch_device(disp_device_t *device, unsigned int fb_id)
 	device->opened = 1;
 	disp_para = (((device->type << 8) | device->mode) << (device->screen_id * 16));
 	hal_save_int_to_kernel("boot_disp", disp_para);
-
+	save_boot_disp_to_uenv(disp_para);
+	
 	fb_dev = get_fb_dev(fb_id);
 	if (NULL == fb_dev) {
 		printf("this device can not be bounded to fb(%d)", fb_id);
@@ -250,4 +262,3 @@ int hal_show_layer(void *handle, char is_show)
 	}
 	return 0;
 }
-

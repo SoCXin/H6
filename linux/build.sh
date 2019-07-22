@@ -21,6 +21,11 @@ root_check()
 	fi	
 }
 
+function gcc_prepare()
+{ 
+	sudo apt install -y u-boot-tools
+}
+
 UBOOT_check()
 {
 	for ((i = 0; i < 5; i++)); do
@@ -140,6 +145,8 @@ function get_toolchain()
     	fi
 }
 
+
+
 OPTION=$(whiptail --title "H6 Build System" \
 	--menu "$MENUSTR" 20 60 12 --cancel-button Finish --ok-button Select \
 	"0"   "Build Release Image" \
@@ -151,6 +158,7 @@ OPTION=$(whiptail --title "H6 Build System" \
 	3>&1 1>&2 2>&3)
 
 get_toolchain
+gcc_prepare
 
 if [ $OPTION = "0" -o $OPTION = "0" ]; then
 	sudo echo ""

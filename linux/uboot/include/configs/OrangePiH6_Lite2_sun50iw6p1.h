@@ -325,8 +325,12 @@
 			"setenv fdt_filename ${fdt_filename_prefix}.dtb ; " \
 		"fi; " \
 		"echo Loading orangepi ${fdt_filename} from ${fdt_addr} ...;" \
-                "fatload mmc 0:1 ${fdt_addr} ${fdt_filename}; " \
-		"fdt addr -c ${fdt_addr}; fdt resize\0" \
+            "fatload mmc 0:1 ${fdt_addr} ${fdt_filename};" \
+        "if test ${disp_para} = \"\"; then " \
+			"echo HDMI not connected!;" \
+		"else;" \
+			"fdt set disp boot_disp <0x${disp_para}>;" \
+		"fi\0" \
 	"load_kernel=" \
 		"echo Loading orangepi ${kernel_filename} from ${kernel_addr} ...;" \
                 "fatload mmc 0:1 ${kernel_addr} ${kernel_filename}\0" \

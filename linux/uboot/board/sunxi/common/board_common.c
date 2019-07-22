@@ -664,7 +664,7 @@ int update_fdt_para_for_kernel(void* dtb_base)
 			if(dragonboard_test == 1)
 			{
 				dragonboard_handler(dtb_base);
-				mmc_update_config_for_dragonboard(2);
+				//mmc_update_config_for_dragonboard(2);
 				#ifdef CONFIG_MMC3_SUPPORT
 				mmc_update_config_for_dragonboard(3);
 				#endif
@@ -672,7 +672,7 @@ int update_fdt_para_for_kernel(void* dtb_base)
 			else
 			{
 				disable_node("nand0");
-				disable_node("mmc2");
+				//disable_node("mmc2");
 				disable_node("mmc3");
 			}
 		}
