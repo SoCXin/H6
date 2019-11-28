@@ -1,12 +1,14 @@
-﻿# [全志H6](https://github.com/mcuyun/H6) 
+﻿# [H6](https://github.com/mcuyun/H6) 
 
-[![sites](SoC/SoC.png)](http://www.qitas.cn) 
+[![sites](http://182.61.61.133/link/resources/SoC.png)](http://www.qitas.cn) 
 
-#### 归属：[cortex A53](https://github.com/sochub/CA53)
+#### [Vendor](https://github.com/sochub/Vendor)：[allwinner](https://github.com/sochub/allwinner) 
+#### [ARM](https://github.com/sochub/ARM)：[cortex A53](https://github.com/sochub/CA53)
+#### [Level](https://github.com/sochub/Level)：
 
-## [描述](https://github.com/sochub/H6/wiki) 
+## [芯片描述](https://github.com/sochub/H6/wiki) 
 
-珠海全志cortex A53四核28nm工艺，针对盒子侧重高清显示4K画质，关键在于接口丰富
+珠海全志[H6](https://github.com/mcuyun/H6)  基于cortex A53四核28nm工艺，针对盒子侧重高清显示4K画质
 
 [![sites](docs/H6.png)](http://www.qitas.cn) 
 
@@ -14,20 +16,20 @@
 
 功能特点：HDMI , mali-T720MP2
 
-主要短板：图像ISP和音频相关
-
 器件封装：BGA451 (15mm x 15mm, 0.65mm/0.3mm pitch) 
 
-#### [docs](docs/)
+### [收录资源](https://github.com/sochub/H6)
 
-参考设计和数据手册
+* [文档](docs/)
+* [linux](linux/)
 
-#### [linux](linux/)
+### [关联资源](https://github.com/sochub)
 
-linux系统构建资源
+* [aarch-linux编译](https://github.com/sochub/aarch-linux)
+* [arm-linux-eabihf编译](https://github.com/sochub/arm-linux-eabihf)
 
----
+### [选型建议](https://github.com/sochub)
 
-###  [SoC开发平台](http://www.qitas.cn)   
+[H6](https://github.com/mcuyun/H6) 是早期的高性能娱乐影音平台处理器，拥有丰富的外设和高性价比的性能
 
-###  qitas@qitas.cn
+##  [SoC资源平台](http://www.qitas.cn)  
